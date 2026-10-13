@@ -1,6 +1,6 @@
 {
   "name": "vinnslan-edvald-workers-dev-3bed09c1d95d",
-  "version": "0.1.0+bundle.f4161b9de15d",
+  "version": "0.1.0+bundle.37cfab197ec1",
   "description": "Use Vinnslan company resources, apps and website development at vinnslan.edvald.workers.dev with separately consented permissions.",
   "author": {
     "name": "Vitverk"
@@ -27,7 +27,7 @@
     "logo": "./assets/logo.svg",
     "logoDark": "./assets/logo-dark.svg",
     "defaultPrompt": [
-      "Set up my Vinnslan connection and check what I can access without changing anything."
+      "Use this plugin’s setup skill to check my Vinnslan connection and help finish connecting if needed."
     ]
   }
 }

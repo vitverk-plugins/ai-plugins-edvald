@@ -15,8 +15,8 @@ organization marketplace. Staff do not need repository access when using that di
 
 Open **Plugins → Add marketplace** and enter the GitHub repository URL provided by the instance's
 setup page. Install **Vinnslan · Edvald**, then run the plugin's setup action or start a new chat and
-say **Set up my Vinnslan connection**. The setup skill checks existing access before asking you
-to sign in. No source checkout, CLI installation or terminal is required for this route.
+say **Use the Vinnslan setup skill to check my connection**. The setup skill checks existing access
+before asking you to sign in.
 
 If sign-in is needed, open **Settings → MCP servers**, find **vinnslan-edvald-workers-dev-3bed09c1d95d**, and click **Authenticate**.
 In the browser, sign in to https://vinnslan.edvald.workers.dev with the account you normally use there. Check the client and
@@ -24,9 +24,14 @@ instance, choose the permissions you want, and click **Connect**. Wait for Codex
 If the browser return is blocked after approval, click **finish signing in** on that approval page.
 Then ask **Check my Vinnslan connection**. Only successful authenticated tool calls prove connection.
 
-The package requests automatic OAuth registration (DCR) through the documented portable MCP
-manifest. Client support still needs live verification. If sign-in cannot load client details,
-the setup skill can start this fallback when command execution and the CLI are available:
+This package uses Codex's compatibility manifest and bundled HTTP MCP configuration. The pilot
+desktop build resolves the server from this format; it currently ignores the server when the
+portable root manifest is present. Do not mix those entrypoints until the intended clients pass
+connection tests. Update the existing plugin if it loads skills but no MCP server.
+
+A plugin-owned server may not appear in `codex mcp get`, which reads separately configured
+servers. Use the plugin's connection controls. For a separately configured server confirmed at
+this exact origin, the existing DCR fallback is:
 
 `codex mcp login vinnslan-edvald-workers-dev-3bed09c1d95d --oauth-client-registration dcr`
 

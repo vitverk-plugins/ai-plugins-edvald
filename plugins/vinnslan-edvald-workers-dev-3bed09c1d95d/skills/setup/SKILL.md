@@ -9,54 +9,55 @@ This package targets only https://vinnslan.edvald.workers.dev/mcp, with MCP serv
 A setup request authorizes connection checks and starting sign-in, not choosing permissions,
 reading private document contents, changing customer data or granting additional access.
 
-## Check before asking the user to act
+## Check the connection first
 
-Discover the installed plugin's tools using the host's available tool discovery. If get_instance
-is available, call it and verify the returned origin. Stop on a different instance. Then use
-list_workspaces, list_website_projects and list_resources only as available and consented, to
-check discovery and resource metadata. Do not read document contents or run business reports for
-setup. Report each category as verified, not granted, not configured, or not checked; a discovery
-failure is not proof that no resources exist. Preserve successful checks when another one fails.
-If already connected, finish with the confirmed instance and a few available next actions.
-Do not reconnect, add another MCP server, or request every permission just to complete setup.
+Use available host tool discovery (including deferred tools) to find this instance's tools.
+Call get_instance when available and verify the returned origin before using other tools. Then
+check accessible workspace, website-project and resource metadata as available and consented.
+Do not read document contents or run reports during setup. If connected, say so briefly and offer
+useful next actions; reuse that connection instead of starting another login.
 
-## Start sign-in only when needed
+## If tools are missing
 
-Use the host's supported connection/authentication action if one is available for this installed
-server. Keep browser consent with the human. Never invent a tool, login URL, token or credential.
-If the host has command execution and an installed Codex CLI, you may start
-`codex mcp login vinnslan-edvald-workers-dev-3bed09c1d95d --oauth-client-registration dcr` and track that process while the
-user completes the browser step. This uses the existing installed server; do not run mcp add.
-Do not install a CLI or require a terminal merely to use the desktop plugin.
+Check the installed plugin and its bundled MCP server through supported host/plugin diagnostics.
+A plugin can load skills while failing to load its server. The standalone CLI's mcp get/list reads
+separately configured servers; a missing entry there does not prove a plugin-owned server is absent
+or unauthenticated. Do not ask the user to authenticate a server you have not found.
 
-If the host cannot initiate authentication, give the applicable exact steps:
-- Codex desktop: open Settings → MCP servers, find `vinnslan-edvald-workers-dev-3bed09c1d95d`, and click Authenticate.
-  If the plugin is absent, open Plugins, install this instance's plugin from its marketplace,
-  then run its setup action or ask “Set up my Vinnslan connection” in a new chat.
-- Claude: open Customize → Connectors, find Vinnslan for `vinnslan.edvald.workers.dev`, and click
-  Connect. If it is missing, finish adding the plugin in Customize → Plugins first. Do not create
-  a second custom connector for an installed plugin. Organization policy can require an owner.
+If the installed plugin resolves zero servers, refresh its marketplace and update that existing
+plugin using supported host controls when available. Do not add a separate MCP server or reinstall
+another copy. This package uses .codex-plugin/plugin.json and .mcp.json because the pilot desktop
+build ignored bundled MCP configuration when a portable root plugin.json was present. Confirm
+server discovery after the update. If a host refresh or new chat is needed, ask only for that next
+action; do not give a sign-in checklist before the server is available.
 
-The browser opens https://vinnslan.edvald.workers.dev. Ask the user to sign in using the same account they normally use in
-Vinnslan. On “Authorize Codex” or the corresponding Claude page, they verify the client and origin,
-select only the capabilities they want, and click Connect. Workspace discovery is useful for the
-initial check; context, business data, development, outputs, workflows, commerce and delivery are
-separate choices. Explain only the choices needed for their intended work. Never click consent or
-select permissions on their behalf. Returned data leaves Vinnslan's sandbox.
+## Help finish sign-in
 
-Wait for the client's sign-in result. If Vinnslan approved access but the browser callback is
-blocked, the user can click “finish signing in” on that approval page. After an expired request,
-start a fresh login. Do not repeatedly replay a pending login or create parallel login attempts.
-A client-details loading failure can use the explicit DCR command above if command execution is
-available; otherwise show it as a troubleshooting fallback, clearly identifying the limitation.
-Never ask for a password, API key, client secret or infrastructure credentials in chat.
+For a discovered server that needs authentication, initiate the host's supported login action when
+available. If the host exposes only a connection control, guide the user to that installed plugin's
+Connect/Authenticate control. Give one next step at a time, using the actual displayed name. Use
+Settings → MCP servers in Codex or Customize → Connectors in Claude only after confirming the entry.
+A native-app control blocked by the host is a host limitation, not a Vinnslan consent restriction.
 
-## Verify after sign-in
+Use a CLI login only for an existing separately configured server whose name and endpoint you
+have verified. In that case, start and track
+`codex mcp login vinnslan-edvald-workers-dev-3bed09c1d95d --oauth-client-registration dcr` if the CLI is already available.
+Do not install a CLI or use this command as a probe for plugin-owned servers.
 
-Refresh tool discovery and repeat only the missing read-only checks. If the host cannot refresh,
-ask the user to start a new chat with this plugin enabled and say “Check my Vinnslan connection”.
-Do not claim sign-in from a browser page alone. A successful authenticated tool result verifies it.
-Missing permissions require the user's separate consent; missing gadgets require owner enablement
-in Vinnslan Connections; missing business connectors require native account/resource assignment.
-Report which one blocks the requested task, using actual tool results. Existing roles, reviews,
-hook enablement and technical-admin promotion requirements still apply after installation.
+Ask the human to complete account sign-in and review permissions on https://vinnslan.edvald.workers.dev. This does not prevent
+you from initiating login, checking status or finishing the remaining setup. Request only the user
+action currently needed; keep permission selection and the final Connect click with them. Explain
+only permissions relevant to their intended work. Returned data leaves Vinnslan's sandbox.
+Never ask for secrets in chat or manufacture a login URL. Do not create parallel login attempts or
+replay a pending login. After approval, a blocked callback can use “finish signing in” on the approval
+page; restart only an expired or definitively failed request.
+
+## Verify and finish
+
+Refresh discovery and repeat missing read-only checks. A successful authenticated tool result
+verifies access; browser approval alone does not. Preserve successful checks when another fails.
+Report the confirmed instance and useful available capabilities briefly. Mention a missing permission,
+owner enablement or resource assignment only when it blocks the requested next action; do not present
+a long list of unchecked categories. Existing roles, reviews, hook enablement and promotion controls
+still apply. When blocked, state the concrete cause and next action instead of quoting this skill's
+consent boundaries as a reason to stop helping.
