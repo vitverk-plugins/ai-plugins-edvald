@@ -14,6 +14,8 @@ reading private document contents, changing customer data or granting additional
 Use available host tool discovery (including deferred tools) to find this instance's tools.
 Call get_instance when available and verify the returned origin before using other tools. Then
 check accessible workspace, website-project and resource metadata as available and consented.
+Start workspace discovery with vinnslan_list_workspaces({}). For paginated checks, omit limit
+to use the default page size and follow nextCursor until absent.
 Do not read document contents or run reports during setup. If connected, say so briefly and offer
 useful next actions; reuse that connection instead of starting another login.
 
