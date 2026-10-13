@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "vinnslan-edvald-workers-dev-3bed09c1d95d": {
+      "type": "http",
+      "url": "https://vinnslan.edvald.workers.dev/mcp"
+    }
+  }
+}

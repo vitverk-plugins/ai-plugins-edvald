@@ -1,0 +1,31 @@
+{
+  "format": 1,
+  "origin": "https://vinnslan.edvald.workers.dev",
+  "plugin": "vinnslan-edvald-workers-dev-3bed09c1d95d",
+  "files": [
+    ".agents/plugins/marketplace.json",
+    ".claude-plugin/marketplace.json",
+    "Install Claude Code.command",
+    "Install Codex.cmd",
+    "Install Codex.command",
+    "README.md",
+    "Sign in to Codex.cmd",
+    "Sign in to Codex.command",
+    "install-codex.ps1",
+    "install-plugin.sh",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/.claude-plugin/plugin.json",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/.codex-plugin/plugin.json",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/.mcp.json",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/assets/logo-dark.svg",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/assets/logo.svg",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/mcp.json",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/plugin.json",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/skills/app-authoring/SKILL.md",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/skills/commerce/SKILL.md",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/skills/company/SKILL.md",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/skills/gadget-tools/SKILL.md",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/skills/setup/SKILL.md",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/skills/setup/agents/openai.yaml",
+    "plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/skills/website-development/SKILL.md"
+  ]
+}

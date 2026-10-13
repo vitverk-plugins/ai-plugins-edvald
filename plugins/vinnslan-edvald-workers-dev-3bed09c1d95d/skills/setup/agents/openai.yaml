@@ -1,0 +1,4 @@
+interface:
+  display_name: "Set up Vinnslan"
+  short_description: "Sign in and check your Vinnslan connection"
+  default_prompt: "Set up my Vinnslan connection and check available access."
