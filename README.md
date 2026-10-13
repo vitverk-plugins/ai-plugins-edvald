@@ -18,20 +18,32 @@ setup page. Install **Vinnslan · Edvald**, then run the plugin's setup action o
 say **Use the Vinnslan setup skill to check my connection**. The setup skill checks existing access
 before asking you to sign in.
 
-If sign-in is needed, open **Settings → MCP servers**, find **vinnslan-edvald-workers-dev-3bed09c1d95d**, and click **Authenticate**.
+If connection setup needs help, open [Connect Vinnslan to Codex](https://vinnslan.edvald.workers.dev/external-access/mcp/connect).
+Choose **Copy setup prompt**, paste it into a Codex chat, and send it. The agent will help finish connecting.
+If automatic setup is unavailable, [connect through settings](https://vinnslan.edvald.workers.dev/external-access/mcp/connect?method=manual)
+shows this instance's existing server and the settings steps.
+Choose **MCP servers**, find **vinnslan-edvald-workers-dev-3bed09c1d95d**, and click **Authenticate** if offered.
 In the browser, sign in to https://vinnslan.edvald.workers.dev with the account you normally use there. Check the client and
 instance, choose the permissions you want, and click **Connect**. Wait for Codex to confirm success.
 If the browser return is blocked after approval, click **finish signing in** on that approval page.
 Then ask **Check my Vinnslan connection**. Only successful authenticated tool calls prove connection.
+
+An agent with local execution, Node.js and the existing Codex CLI can check the packaged connection
+without changing configuration: `node plugins/vinnslan-edvald-workers-dev-3bed09c1d95d/scripts/connect-codex.mjs --check`.
+Only after `authentication_required`, use `--login` to start one explicit sign-in. Keep that
+process alive and open only its returned authorization URL. Account sign-in and permission review
+stay with you. A `pending` result means inspect the existing attempt through the help page; do
+not start another. Interrupted attempts retain a private temporary receipt, even after expiry, until
+manual recovery. Missing local runtimes use the help page; the helper installs nothing.
 
 This package uses Codex's compatibility manifest and bundled HTTP MCP configuration. The pilot
 desktop build resolves the server from this format; it currently ignores the server when the
 portable root manifest is present. Do not mix those entrypoints until the intended clients pass
 connection tests. Update the existing plugin if it loads skills but no MCP server.
 
-A plugin-owned server may not appear in `codex mcp get`, which reads separately configured
-servers. Use the plugin's connection controls. For a separately configured server confirmed at
-this exact origin, the existing DCR fallback is:
+Plugin-owned server discovery depends on the client version and active host context. Use the
+packaged helper or the plugin's connection controls. For an existing CLI server entry verified at
+this exact origin, the DCR fallback is:
 
 `codex mcp login vinnslan-edvald-workers-dev-3bed09c1d95d --oauth-client-registration dcr`
 
