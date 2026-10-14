@@ -2,7 +2,7 @@
 set -eu
 umask 077
 vinnslan_source=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
-vinnslan_name='vinnslan-edvald-workers-dev-3bed09c1d95d'
+vinnslan_name='nonni'
 printf 'Installing Vinnslan for %s\n' 'https://vinnslan.edvald.workers.dev'
 vinnslan_client=codex
 if [ "$#" -gt 0 ]; then vinnslan_client="$1"; fi

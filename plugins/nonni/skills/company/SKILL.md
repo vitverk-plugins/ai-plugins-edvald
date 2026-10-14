@@ -1,20 +1,27 @@
 ---
 name: company
-description: Read live company context, DK reports, Analytics and operational datasets through separately granted Vinnslan resources.
+description: Read live Nonni context, DK reports, Analytics and operational datasets through separately granted Nonni resources.
 ---
 
-# Vinnslan · Edvald — company
+# Nonni — company
 
-Use only the MCP server named `vinnslan-edvald-workers-dev-3bed09c1d95d` at https://vinnslan.edvald.workers.dev/mcp for this customer.
+Use only this plugin's Nonni connection, MCP server `nonni` at https://vinnslan.edvald.workers.dev/mcp.
+Tool names below omit the server's instance prefix; match each tool by its name's ending.
 Fetch private context live. Plugin files never confer permissions. Each capability requires separate
 native consent at https://vinnslan.edvald.workers.dev/external-access/mcp. Existing gadget consent grants none of these.
-Returning data to Codex is explicit external access; Vinnslan cannot restrict its subsequent use.
+Data returned to this chat leaves Nonni's sandbox; Nonni cannot restrict its subsequent use.
 Never put operational data, private documents, tokens or infrastructure credentials in this package.
+Work only through this connection's tools. Never open https://vinnslan.edvald.workers.dev in a browser or drive its interface
+with browser or computer-use tools; when no tool covers a step, say what is missing and give the user
+the link to do it there.
 
 
 Discover accessible workspaces first. In a build workspace, list context/business resources and read
 resource_api before choosing a method. Use exact resource IDs from the same workspace. Context
-list/search/read uses the live Context Library. Do not copy its private content into skill files.
+list/search/read uses the live Context Library. Its resource_api also returns its catalog, as the
+workspace agent sees it: collections and agent skills, the company's own instructions for tasks.
+Before work a skill covers, read it (method read, with its id) and follow it. Do not copy the
+library's private content into skill files.
 For sales/accounting, use DK's actual API documentation and report date conventions; do not infer
 account numbers, currencies, channel definitions or company facts. For Analytics and datasets use
 their documented filters and pagination. State the period, source, freshness and any partial result.

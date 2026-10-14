@@ -3,13 +3,17 @@ name: commerce
 description: Use available Medusa administration tools with the customer’s actual assignment, role and environment controls.
 ---
 
-# Vinnslan · Edvald — commerce
+# Nonni — commerce
 
-Use only the MCP server named `vinnslan-edvald-workers-dev-3bed09c1d95d` at https://vinnslan.edvald.workers.dev/mcp for this customer.
+Use only this plugin's Nonni connection, MCP server `nonni` at https://vinnslan.edvald.workers.dev/mcp.
+Tool names below omit the server's instance prefix; match each tool by its name's ending.
 Fetch private context live. Plugin files never confer permissions. Each capability requires separate
 native consent at https://vinnslan.edvald.workers.dev/external-access/mcp. Existing gadget consent grants none of these.
-Returning data to Codex is explicit external access; Vinnslan cannot restrict its subsequent use.
+Data returned to this chat leaves Nonni's sandbox; Nonni cannot restrict its subsequent use.
 Never put operational data, private documents, tokens or infrastructure credentials in this package.
+Work only through this connection's tools. Never open https://vinnslan.edvald.workers.dev in a browser or drive its interface
+with browser or computer-use tools; when no tool covers a step, say what is missing and give the user
+the link to do it there.
 
 
 Discover the currently available commerce tools and their supported operations first. Commerce

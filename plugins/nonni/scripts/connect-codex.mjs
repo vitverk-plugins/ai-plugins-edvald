@@ -1,4 +1,4 @@
-const config = {"origin":"https://vinnslan.edvald.workers.dev","server":"vinnslan-edvald-workers-dev-3bed09c1d95d","pluginId":"vinnslan-edvald-workers-dev-3bed09c1d95d@vinnslan-edvald-workers-dev-3bed09c1d95d","helpUrl":"https://vinnslan.edvald.workers.dev/external-access/mcp/connect?method=manual","rpcTimeoutMs":30000,"loginTimeoutMs":300000};
+const config = {"origin":"https://vinnslan.edvald.workers.dev","server":"nonni","pluginId":"nonni@nonni","helpUrl":"https://vinnslan.edvald.workers.dev/external-access/mcp/connect?method=manual","rpcTimeoutMs":30000,"loginTimeoutMs":300000};
 
 import {spawn} from 'node:child_process';
 import {access, lstat, mkdir, open, unlink} from 'node:fs/promises';

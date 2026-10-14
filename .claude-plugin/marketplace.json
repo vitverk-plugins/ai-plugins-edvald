@@ -1,13 +1,16 @@
 {
-  "name": "vinnslan-edvald-workers-dev-3bed09c1d95d",
+  "name": "nonni",
   "owner": {
     "name": "Vitverk"
   },
+  "metadata": {
+    "description": "Nonni: company context, apps and website development at vinnslan.edvald.workers.dev, each with separately consented permissions."
+  },
   "plugins": [
     {
-      "name": "vinnslan-edvald-workers-dev-3bed09c1d95d",
-      "source": "./plugins/vinnslan-edvald-workers-dev-3bed09c1d95d",
-      "description": "Use Vinnslan company resources, apps and website development at vinnslan.edvald.workers.dev with separately consented permissions."
+      "name": "nonni",
+      "source": "./plugins/nonni",
+      "description": "Nonni: company context, apps and website development at vinnslan.edvald.workers.dev, each with separately consented permissions."
     }
   ]
 }

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Set up Nonni"
+  short_description: "Sign in and check your Nonni connection"
+  default_prompt: "Use $setup to check my Nonni connection and help finish connecting if needed."

@@ -1,20 +1,23 @@
 ---
 name: website-development
-description: Directly develop the customer website in Vinnslan boxes from an ordinary Codex chat without SSH or a local checkout.
+description: Develop the Nonni website in Nonni's hosted development boxes from an ordinary chat, without SSH or a local checkout.
 ---
 
-# Vinnslan · Edvald — website-development
+# Nonni — website-development
 
-Use only the MCP server named `vinnslan-edvald-workers-dev-3bed09c1d95d` at https://vinnslan.edvald.workers.dev/mcp for this customer.
+Use only this plugin's Nonni connection, MCP server `nonni` at https://vinnslan.edvald.workers.dev/mcp.
+Tool names below omit the server's instance prefix; match each tool by its name's ending.
 Fetch private context live. Plugin files never confer permissions. Each capability requires separate
 native consent at https://vinnslan.edvald.workers.dev/external-access/mcp. Existing gadget consent grants none of these.
-Returning data to Codex is explicit external access; Vinnslan cannot restrict its subsequent use.
+Data returned to this chat leaves Nonni's sandbox; Nonni cannot restrict its subsequent use.
 Never put operational data, private documents, tokens or infrastructure credentials in this package.
-
+Work only through this connection's tools. Never open https://vinnslan.edvald.workers.dev in a browser or drive its interface
+with browser or computer-use tools; when no tool covers a step, say what is missing and give the user
+the link to do it there.
 
 List currently accessible website projects.
 Use start_website_session with a fresh request UUID, then status until ready. This external session
-never starts Vinnslan's editing agent. All files, commands, logs and submission use plugin tools.
+never starts Nonni's built-in editing agent. All files, commands, logs and submission use plugin tools.
 No SSH session, local checkout, customer cloud login or infrastructure key is needed or appropriate.
 Read files with their fileRevision and session revision. Preserve both when writing. Reconcile conflicts
 by rereading. Keep one mutation in flight; retain every request ID and receipt.

@@ -1,14 +1,14 @@
 {
-  "name": "vinnslan-edvald-workers-dev-3bed09c1d95d",
+  "name": "nonni",
   "interface": {
-    "displayName": "Vinnslan · Edvald"
+    "displayName": "Nonni"
   },
   "plugins": [
     {
-      "name": "vinnslan-edvald-workers-dev-3bed09c1d95d",
+      "name": "nonni",
       "source": {
         "source": "local",
-        "path": "./plugins/vinnslan-edvald-workers-dev-3bed09c1d95d"
+        "path": "./plugins/nonni"
       },
       "policy": {
         "installation": "AVAILABLE",

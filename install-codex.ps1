@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 try {
-  $vinnslanName = 'vinnslan-edvald-workers-dev-3bed09c1d95d'
+  $vinnslanName = 'nonni'
   Write-Host ('Installing Vinnslan for ' + 'https://vinnslan.edvald.workers.dev')
   $vinnslanCodex = Get-Command codex -ErrorAction SilentlyContinue
   if (-not $vinnslanCodex) { throw 'Codex CLI was not found. Install Codex CLI, then run this installer again.' }

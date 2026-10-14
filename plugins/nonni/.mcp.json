@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "vinnslan-edvald-workers-dev-3bed09c1d95d": {
+    "nonni": {
       "type": "http",
       "url": "https://vinnslan.edvald.workers.dev/mcp"
     }
