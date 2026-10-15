@@ -81,6 +81,51 @@
             "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"nonni registers a persistent workflow. Confirm before it runs.\"}}'"
           }
         ]
+      },
+      {
+        "matcher": "^mcp__plugin_nonni_nonni__nonni_site_publish$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"nonni registers a public site for an app. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_nonni_nonni__nonni_site_turn_on$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"nonni turns a site on, making its workspace public. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_nonni_nonni__nonni_site_go_live$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"nonni takes a site live at its own address. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_nonni_nonni__nonni_site_make_private$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"nonni takes a site off its own address. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_nonni_nonni__nonni_site_new_link$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"nonni replaces the private link of a site. Confirm before it runs.\"}}'"
+          }
+        ]
       }
     ]
   }
