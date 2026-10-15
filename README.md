@@ -20,8 +20,8 @@ Connection help: https://vinnslan.edvald.workers.dev/external-access/mcp/connect
 
 ## Codex
 
-Open **Plugins → Add marketplace**, add https://github.com/vitverk-plugins/ai-plugins-edvald, install **Nonni**, and run its setup
-skill. If connecting needs help, open https://vinnslan.edvald.workers.dev/external-access/mcp/connect, choose **Copy setup prompt**
+Copy https://github.com/vitverk-plugins/ai-plugins-edvald, open **Plugins → Add marketplace** and paste it. On the **Personal** tab, install
+**Nonni**, then run its setup skill. If connecting needs help, open https://vinnslan.edvald.workers.dev/external-access/mcp/connect, choose **Copy setup prompt**
 and send it in a Codex chat, or use https://vinnslan.edvald.workers.dev/external-access/mcp/connect?method=manual for the Settings steps.
 An agent with Node.js and the Codex CLI can check the connection with
 `node plugins/nonni/scripts/connect-codex.mjs --check`, and only after `authentication_required`
